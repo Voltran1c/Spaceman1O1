@@ -11,7 +11,7 @@ const about = {
     'I graduated from Generation Thailand`s Junior Software Developer Bootcamp, specializing in designing, developing, and deploying front-end and back-end web applications. With a strong commitment to creating high-quality software, I am a dedicated team player who is eager to learn, self-motivated, and capable of working independently.',
   ],
   resume:
-    'https://drive.google.com/file/d/11Oar6PRvh8b-S-yNe5HUP3HHzqRUqP2E/view?usp=sharing',
+    'https://drive.google.com/file/d/1vwpZ-kUV62gfRROXRyhrRJ3bPZzx4c9h/view?usp=sharing',
   social: {
     github: 'https://github.com/Voltran1c',
     linkedin: 'https://www.linkedin.com/in/watcharapong1996/',
