@@ -5,13 +5,13 @@ const header = {
 const about = {
   names: ['SPACEMAN', '1O1'],
   greetingEmoji: '👩‍🚀',
-  role: 'Junior Software Developer',
-  company: 'Generation Thailand',
+  role: 'Fullstack Developer',
+  // company: 'passionate about building modern web apps.',
   description: [
-    'I graduated from Generation Thailand`s Junior Software Developer Bootcamp, specializing in designing, developing, and deploying front-end and back-end web applications. With a strong commitment to creating high-quality software, I am a dedicated team player who is eager to learn, self-motivated, and capable of working independently.',
+    'Fullstack Developer with expertise in React.js, Node.js, and database systems. Experienced in delivering end-to-end web solutions with a focus on performance, scalability, and user experience.',
   ],
   resume:
-    'https://drive.google.com/file/d/1vwpZ-kUV62gfRROXRyhrRJ3bPZzx4c9h/view?usp=sharing',
+    'https://drive.google.com/file/d/19fBNFHpGDb2aqtLAa-SUr2932q7835yb/view?usp=sharing',
   social: {
     github: 'https://github.com/Voltran1c',
     linkedin: 'https://www.linkedin.com/in/watcharapong1996/',
@@ -63,19 +63,25 @@ const projects = [
 
 const skills = [
   'React',
+  'Next.js',
+  'Nest.js',
   'JavaScript',
   'TypeScript',
   'Tailwind CSS',
   'Material UI',
   'Ant Design',
+  'Docker',
   'Redux',
   'Git',
   'Node.js',
   'Express.js',
+  'PostgreSQL',
   'MongoDB',
-  'Next.js',
   'SQL',
   'Postman',
+  'Swagger',
+  'K2',
+  'Playwrite',
 ]
 
 const contact = {

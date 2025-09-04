@@ -6,7 +6,7 @@ const Footer = () => (
       rel='noreferrer'
       className='link footer__link'
     >
-      Powered by Next.js
+      Powered by SPACEMAN
     </a>
   </footer>
 )
