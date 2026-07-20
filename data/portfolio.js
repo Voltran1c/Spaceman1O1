@@ -5,10 +5,10 @@ const header = {
 const about = {
   names: ['SPACEMAN', '1O1'],
   greetingEmoji: '👩‍🚀',
-  role: 'Fullstack Developer',
+  role: 'Quality Assurance Engineer',
   // company: 'passionate about building modern web apps.',
   description: [
-    'Fullstack Developer with expertise in React.js, Node.js, and database systems. Experienced in delivering end-to-end web solutions with a focus on performance, scalability, and user experience.',
+    'Quality Assurance Engineer with expertise in manual and automated testing, API testing, and test case design. Experienced in ensuring software quality, reliability, and performance through structured test planning and close collaboration with development teams.',
   ],
   resume:
     'https://drive.google.com/file/d/19fBNFHpGDb2aqtLAa-SUr2932q7835yb/view?usp=sharing',
@@ -62,26 +62,27 @@ const projects = [
 ]
 
 const skills = [
-  'React',
-  'Next.js',
-  'Nest.js',
+  'Playwright',
+  'Postman',
+  'Apidog',
+  'Swagger',
+  'SQL',
+  'Git',
+  'Docker',
   'JavaScript',
   'TypeScript',
-  'Tailwind CSS',
-  'Material UI',
-  'Ant Design',
-  'Docker',
-  'Redux',
-  'Git',
   'Node.js',
   'Express.js',
   'PostgreSQL',
   'MongoDB',
-  'SQL',
-  'Postman',
-  'Swagger',
+  'React',
+  'Next.js',
+  'Nest.js',
+  'Redux',
+  'Tailwind CSS',
+  'Material UI',
+  'Ant Design',
   'K2',
-  'Playwrite',
 ]
 
 const contact = {

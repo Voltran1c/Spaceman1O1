@@ -1,5 +1,6 @@
 .about {
   --about-column-gap: 2.4rem;
+  position: relative;
   min-height: calc(100vh - var(--header-height));
   text-align: center;
   display: flex;
@@ -7,6 +8,28 @@
   justify-content: center;
   align-items: center;
   gap: var(--about-column-gap);
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: min(85vw, 820px);
+  height: min(85vw, 820px);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--clr-glow) 0%, transparent 68%);
+  filter: blur(50px);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about__greeting,
+.about__role {
+  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 32px var(--clr-glow);
 }
 
 .about__pseudo-padding {

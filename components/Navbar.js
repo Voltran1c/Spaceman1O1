@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../contexts/theme";
 import { header, about, projects, skills, contact } from "../data/portfolio";
+import SectionOrb from "./SectionOrb";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import WbSunnyRoundedIcon from "@material-ui/icons/WbSunnyRounded";
@@ -12,6 +13,7 @@ const Navbar = () => {
   const { wordmark } = header;
   const { names } = about;
   const defaultWordmark = "About Me";
+  const brandOrbColor = themeName === "dark" ? "#64ffda" : "#3a86ff";
 
   const toggleNavListOverlay = () => {
     showNavList
@@ -35,18 +37,24 @@ const Navbar = () => {
 
   return (
     <nav className="nav container animate__animated animate__fadeIn animate__delay-5s">
+      <div className="nav__brand">
+        <span className="nav__brand-orb">
+          <SectionOrb shape="ring" color={brandOrbColor} size={44} />
+        </span>
+        <a href="#top" onClick={hideNavListOverlay} className="link nav__brand-link">
+          <span className="nav__brand-full">
+            {wordmark || names.join(" ") || defaultWordmark}
+          </span>
+          <span className="nav__brand-short">
+            {wordmark || names.map((name) => name[0]).join("") || defaultWordmark}
+          </span>
+        </a>
+      </div>
+
       <ul
         className="nav__list"
         style={{ display: showNavList ? "flex" : null }}
       >
-        <li className="nav__list-item nav__scroll-top">
-          <strong>
-            <a href="#top" onClick={hideNavListOverlay} className="link">
-              {wordmark || names.join(" ") || defaultWordmark}
-            </a>
-          </strong>
-        </li>
-
         {projects.length && (
           <li className="nav__list-item">
             <a
@@ -84,33 +92,25 @@ const Navbar = () => {
         )}
       </ul>
 
-      <button
-        type="button"
-        onClick={toggleNavListOverlay}
-        aria-label="toggle navigation"
-        className="btn btn--icon nav__button nav__hamburger"
-      >
-        {showNavList ? <CloseIcon /> : <MenuIcon />}
-      </button>
+      <div className="nav__actions">
+        <button
+          type="button"
+          onClick={toggleNavListOverlay}
+          aria-label="toggle navigation"
+          className="btn btn--icon nav__button nav__hamburger"
+        >
+          {showNavList ? <CloseIcon /> : <MenuIcon />}
+        </button>
 
-      <div className="nav__scroll-top">
-        <strong>
-          <a href="#top" onClick={hideNavListOverlay} className="link">
-            {wordmark ||
-              names.map((name) => name[0]).join("") ||
-              defaultWordmark}
-          </a>
-        </strong>
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label="toggle theme"
+          className="btn btn--icon nav__button"
+        >
+          {themeName === "dark" ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
+        </button>
       </div>
-
-      <button
-        type="button"
-        onClick={toggleTheme}
-        aria-label="toggle theme"
-        className="btn btn--icon nav__button"
-      >
-        {themeName === "dark" ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
     </nav>
   );
 };

@@ -1,0 +1,45 @@
+.cursor-rocket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 46px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-rocket__flame {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  filter: drop-shadow(0 0 6px rgba(255, 138, 61, 0.85));
+  animation: flame-flicker 0.3s ease-in-out infinite alternate;
+}
+
+.cursor-rocket__flame--mid {
+  animation-duration: 0.24s;
+}
+
+.cursor-rocket__flame--inner {
+  animation-duration: 0.16s;
+  filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.95));
+}
+
+@keyframes flame-flicker {
+  0% {
+    transform: scaleY(0.7) scaleX(0.85);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scaleY(1.35) scaleX(1.1);
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-rocket {
+    display: none;
+  }
+}

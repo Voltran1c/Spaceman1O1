@@ -1,8 +1,17 @@
 .project {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --lift: 0px;
   padding: 2rem;
   text-align: center;
+  background-color: var(--clr-bg-alt);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--clr-glow);
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
+  transform: perspective(900px) rotateX(var(--rotate-x))
+    rotateY(var(--rotate-y)) translateY(var(--lift));
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -10,7 +19,7 @@
 }
 
 .project:hover {
-  transform: translateY(-8px);
+  box-shadow: 0 20px 45px var(--clr-glow);
 }
 
 .project__thumbnail {

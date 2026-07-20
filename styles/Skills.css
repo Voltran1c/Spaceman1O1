@@ -7,8 +7,15 @@
 .skills__list-item {
   margin: 0.5rem;
   border-radius: 0.75rem;
+  background-color: var(--clr-bg-alt);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--clr-glow);
+  transform: perspective(600px) rotateX(0deg) translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skills__list-item:hover {
   cursor: auto;
+  transform: perspective(600px) rotateX(12deg) translateY(-6px);
+  box-shadow: 0 12px 24px var(--clr-glow);
 }

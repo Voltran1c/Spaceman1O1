@@ -1,0 +1,10 @@
+.section-orb {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto -0.5rem;
+}
+
+.section-orb canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

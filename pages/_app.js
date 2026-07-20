@@ -1,8 +1,12 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import { ThemeProvider } from '../contexts/theme'
 import { about } from '../data/portfolio'
 import '../styles/index.css'
 import '../styles/App.css'
+import '../styles/SpaceBackground.css'
+import '../styles/SectionOrb.css'
+import '../styles/CursorRocket.css'
 import '../styles/Header.css'
 import '../styles/Navbar.css'
 import '../styles/About.css'
@@ -13,6 +17,13 @@ import '../styles/Contact.css'
 import '../styles/ScrollToTop.css'
 import '../styles/Footer.css'
 import 'animate.css'
+
+const SpaceBackground = dynamic(() => import('../components/SpaceBackground'), {
+  ssr: false,
+})
+const CursorRocket = dynamic(() => import('../components/CursorRocket'), {
+  ssr: false,
+})
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -40,6 +51,8 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider>
+        <SpaceBackground />
+        <CursorRocket />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

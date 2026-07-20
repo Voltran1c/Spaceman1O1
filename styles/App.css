@@ -59,6 +59,15 @@
 .link--nav {
   color: var(--clr-fg);
   font-weight: 500;
+  display: inline-block;
+  transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
+}
+
+.link--nav:hover,
+.link--nav:focus {
+  color: var(--clr-primary);
+  transform: perspective(300px) rotateX(-14deg) translateY(-2px);
+  text-shadow: 0 8px 16px var(--clr-glow);
 }
 
 .link--icon {
@@ -81,11 +90,14 @@
   overflow: hidden;
   z-index: 1;
   border-radius: 0.75rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .btn--outline:hover,
 .btn--outline:focus {
-  color: var(--clr-bg);
+  color: var(--clr-on-primary);
+  box-shadow: 0 0 24px var(--clr-glow);
+  transform: translateY(-2px);
 }
 
 .btn--outline:before {
@@ -130,5 +142,21 @@
 }
 
 .text--strong {
-  color: var(--clr-primary);
+  background: var(--clr-gradient);
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s ease-in-out infinite;
+}
+
+@keyframes text-shimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }

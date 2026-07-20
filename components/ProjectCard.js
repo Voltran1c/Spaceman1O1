@@ -1,9 +1,37 @@
+import { useRef } from "react";
 import uniqid from "uniqid";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
 
-const ProjectCard = ({ project }) => (
-  <div className="project">
+const ProjectCard = ({ project }) => {
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (event) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    card.style.setProperty("--rotate-x", `${(-y * 12).toFixed(2)}deg`);
+    card.style.setProperty("--rotate-y", `${(x * 12).toFixed(2)}deg`);
+    card.style.setProperty("--lift", "-8px");
+  };
+
+  const resetTilt = () => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.setProperty("--rotate-x", "0deg");
+    card.style.setProperty("--rotate-y", "0deg");
+    card.style.setProperty("--lift", "0px");
+  };
+
+  return (
+  <div
+    ref={cardRef}
+    className="project"
+    onMouseMove={handleMouseMove}
+    onMouseLeave={resetTilt}
+  >
     {project.thumbnail && (
       <img
         className="project__thumbnail"
@@ -60,6 +88,7 @@ const ProjectCard = ({ project }) => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default ProjectCard;
